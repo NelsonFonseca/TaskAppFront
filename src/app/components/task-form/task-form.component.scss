@@ -1,0 +1,26 @@
+form{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    .input-group{
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+
+        label{
+            width: 150px;
+        }
+        input{
+            width: 180px;
+        }
+        textarea{
+            width: 180px;
+        }
+    }
+
+    button{
+        max-width: 150px;
+        margin: 0 auto;
+    }
+}

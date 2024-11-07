@@ -1,0 +1,23 @@
+/* You can add global styles to this file, and also import other style files */
+body{
+    background-color: rgb(241, 241, 241);
+}
+.btn{
+    cursor: pointer;
+    padding: 10px;
+    border: 0;
+    border-radius: 10px;
+    background-color: #cecefe;
+}
+
+.btn-error{
+    background-color: #ffc8c5;
+}
+
+.btn-success{
+    background-color: #b8fee2;
+}
+
+.btn-warning{
+    background-color: #ffdeb5;
+}

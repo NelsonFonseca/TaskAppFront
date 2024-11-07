@@ -1,0 +1,31 @@
+<h1>TAREAS APP</h1>
+<hr>
+<button class="btn" (click)="visible = true">Agregar Tarea</button>
+<div class="input-group">
+  <label>Ver Tareas:</label>
+  <p-dropdown [options]="filters" [(ngModel)]="filterOption" [showClear]="false" (onChange)="loadTasks()"></p-dropdown>
+</div>
+<div class="card-container" *ngIf="tasks">
+  <p-card [header]="task.title" *ngFor="let task of tasks" class="task-item">
+    <p class="m-0">
+      {{ task.description }}
+    </p>
+    <div class="button-group">
+      <button [class]="task.completed ? 'btn btn-warning': 'btn btn-success'" (click)="toggleCompletion(task)">
+        {{ task.completed ? 'Marcar como Pendiente' : 'Marcar como Completada' }}
+      </button>
+      <button class="btn btn-error" (click)="deleteTask(task.id!)">Eliminar</button>
+    </div>
+
+  </p-card>
+</div>
+<div class="no-content" *ngIf="tasks.length == 0">
+  <p>No hay tareas para mostrar</p>
+</div>
+
+<p-dialog header="Crear Nueva Tarea" [(visible)]="visible" [modal]="true"
+  [style]="{ width: 'min(100% - 40px , 400px)' }" [draggable]="false" [resizable]="false">
+  <app-task-form (showLoader)="showLoader($event)" (finallyForm)="visible = false; finallyForm($event)"></app-task-form>
+</p-dialog>
+
+<p-toast></p-toast>

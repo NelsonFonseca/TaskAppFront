@@ -1,0 +1,15 @@
+<form [formGroup]="taskForm" (ngSubmit)="onSubmit()">
+
+  <div class="input-group">
+    <label for="title">Título</label>
+    <input id="title" formControlName="title" required />
+  </div>
+
+  <div class="input-group">
+    <label for="description">Descripción</label>
+    <textarea id="description" formControlName="description"></textarea>
+  </div>
+
+  <button class="btn" type="submit" [disabled]="taskForm.invalid">Guardar Tarea</button>
+  
+</form>

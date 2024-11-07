@@ -1,0 +1,22 @@
+<div class="app-container">
+  <app-task-list (hiddenloading)="hiddenloading = $event"></app-task-list>
+</div>
+
+
+<!--Loading-->
+<div class="centrado-loading" *ngIf="hiddenloading">
+  <div class="lds-spinner">
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>
+</div>
